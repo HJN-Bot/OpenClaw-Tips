@@ -116,7 +116,54 @@
 
 ---
 
-## 7) 未来补充
+## 7) 好用的 Tips（具体到技能/账号/工具）
+
+### 7.1 常用 Skills（按场景）
+> 目标：把“会用”变成“形成固定套路”。
+
+- **github（gh CLI）**：查 issue/PR、拉取代码、创建仓库（比如 Love-Spinner / OpenClaw-Tips）
+  - 适用：工程协作、快速开源/内部共享
+- **summarize**：总结 URL / PDF / 图片 / 音频 / YouTube（做研究、读论文、看视频）
+- **blogwatcher**：监控博客/RSS，做行业情报与竞品追踪
+- **obsidian**：把碎片化想法沉淀到 Obsidian vault（长期知识库）
+- **coding-agent**：需要大量改代码/生成文件时，用子代理批量完成（你做“工程化落地”时最省命）
+- **nano-pdf**：把 PDF 用自然语言编辑/加页/改格式（交付类文档）
+- **nano-banana-pro**：做海报/封面/视觉素材（招募帖、one-pager配图）
+- **bird（X/Twitter）**：抓线程/总结推文（需要 cookies 配置）
+
+> 经验法则：
+> - **要“快产出”**：summarize / nano-banana-pro
+> - **要“工程落地”**：github / coding-agent
+> - **要“长期积累”**：obsidian / blogwatcher
+
+### 7.2 GitHub 账号与仓库约定
+- 组织/账号：`HJN-Bot`
+- 推荐仓库命名：
+  - `OpenClaw-Tips`：方法论与最佳实践（这份文档所在）
+  - `Love-Spinner`：恋爱转盘（题库+交互spec）
+  - `phase-one-phase-two-cny-checklist`：学习路径/清单
+- 约定：
+  - `README.md` 写“怎么用 + 交付物 + 下一步”
+  - 每次改动都能被别人复现（命令/截图/链接）
+
+### 7.3 Dashboard（低噪音看板）
+- 访问：`http://54.169.36.2:8080/`（Basic Auth）
+- 服务脚本：`/home/ubuntu/.openclaw/workspace/tools/dashboard_web.mjs`
+- 页面文件：`/home/ubuntu/.openclaw/workspace/dashboard/index.html`
+
+**使用套路：**
+1) Airtable 作为“单一事实来源”（Tasks/Ideas/Threads）
+2) 定时同步把近 14 天 Top8 刷到 dashboard（只看最重要的）
+3) 需要复盘时：从 dashboard 卡片回到 Airtable 查细节
+
+### 7.4 个人定制 Tips（让系统越用越顺）
+- 把所有“固定提醒/同步”交给 cron（而不是靠你记忆）
+- 把“会话里产出的关键结论/待办”写入：Airtable + README/notes（可检索、可交接）
+- 所有自动化都遵循：**L1记录 / L2建议 / L3白名单执行**
+
+---
+
+## 8) 未来补充
 - Prompt Library（按场景）
 - Dashboard 组件化（小屏/移动端）
 - Agent Organ Hub 的 MVP 任务拆解
