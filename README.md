@@ -32,6 +32,10 @@
 - 每个 event / run 都要有：输入指针、输出指针、日志指针
 - 目的：排障、审计、复现
 
+### 1.4 真实案例
+- **CER 的 A/B 评测口径冲突**：Quick test 说 A 好、ABtest 说 B 好 → 先统一“硬门槛指标”（marker_validity/no_residue/parse_fail_rate/不丢原文），再谈质量/成本；最终建议混合策略 **B 先跑→校验不过回退 A**。
+- **从 0 到 1 新建并交付一个小产品 repo**：把恋爱转盘做成可开发交付物（题库 JSON + 交互规范），并推到 GitHub（`HJN-Bot/Love-Spinner`），实现“想法→可协作工程资产”。
+
 ---
 
 ## 2) 学习（Learning）
@@ -47,6 +51,10 @@
   - 我学到的概念/套路
   - 我能复用的命令/模板
   - 我下次会怎么更快
+
+### 2.3 真实案例
+- **春节学习清单（Phase One/Two）**：把大而全的学习拆成 3-5 天最小单元 checklist（只学能验收的 20%：E2E复现/Review+patch/rerun/Evals+AB/LLM验收）。仓库：`HJN-Bot/phase-one-phase-two-cny-checklist`。
+- **Prompt+Skills 资源沉淀**：把零散的“好用网站/技巧”放进看板 threads，形成“随用随取”的学习入口（避免每次重复搜索）。
 
 ---
 
@@ -71,6 +79,10 @@
 - 用 cron/定时：Airtable→dashboard→消息摘要
 - 提醒里只包含：Top8 + 是否需要 Idea→Task / 清理长期未动
 
+### 3.4 真实案例
+- **下班地铁提醒 + 自动同步**：每天定时从 Airtable 拉取近 14 天 Top8，同步到 `dashboard/index.html`，并在 Discord 发一条“低噪音摘要”（标题+相关+状态+一句话），同时提醒 Idea→Task 或清理长期未动。
+- **把语音想法直接变成 Task**：你口述“明天要整理 cloud 交互体验并做网页分享”→ 我直接创建 Airtable 任务（High Priority），再立刻刷新 dashboard，保证第二天开工不丢。
+
 ---
 
 ## 4) 个人定制（Personalization）
@@ -84,6 +96,10 @@
 - 先用手机跑通闭环（C），再上穿戴 BLE（A）
 - 输出要空间化：声/光/屏/动作
 - 隐私最小基线：按键采集 + 不可关闭指示灯 + 本地优先 + 审计回放
+
+### 4.3 真实案例
+- **Love-Spinner：从需求到可交付 spec**：你提出“问题在中间，左右男女分别选 ABCD，聊完再协商一个答案”→ 我补齐了交互规格（`INTERACTION_SPEC.md`）、题库（`question_bank_v0.json`），并推到 GitHub，开发可直接开工。
+- **Dashboard 目录规范化**：统一看板页面固定为 `workspace/dashboard/index.html`，配套服务脚本 `tools/dashboard_web.mjs`，避免“到处一个 index.html”导致维护崩掉。
 
 ---
 
