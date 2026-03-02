@@ -38,7 +38,6 @@
       "originalText": "Dashboard Whiteboard（纵向三层）：Airtable 真源 → Web 中控 → Discord 输入/提醒",
       "lineHeight": 1.25
     },
-
     {
       "id": "airtable_box",
       "type": "rectangle",
@@ -54,8 +53,12 @@
       "strokeStyle": "solid",
       "roughness": 2,
       "opacity": 100,
-      "groupIds": ["layerA"],
-      "roundness": {"type": 3},
+      "groupIds": [
+        "layerA"
+      ],
+      "roundness": {
+        "type": 3
+      },
       "seed": 102,
       "version": 1,
       "versionNonce": 102,
@@ -80,7 +83,9 @@
       "strokeStyle": "solid",
       "roughness": 0,
       "opacity": 100,
-      "groupIds": ["layerA"],
+      "groupIds": [
+        "layerA"
+      ],
       "roundness": null,
       "seed": 103,
       "version": 1,
@@ -100,7 +105,6 @@
       "originalText": "Layer A｜Airtable（Base 真源）\n\n数据表：\n- Tasks：title/desc/state/tag/update_at + start/deadline（排期）\n- Ideas：灵感池（可转 Task）\n- Eurekas：结论/原则（可检索）\n\n规则：对话产生的“要执行/要沉淀”最终必须写回真源（避免分叉）。",
       "lineHeight": 1.25
     },
-
     {
       "id": "arrow_A_to_B",
       "type": "arrow",
@@ -117,7 +121,9 @@
       "roughness": 0,
       "opacity": 100,
       "groupIds": [],
-      "roundness": {"type": 2},
+      "roundness": {
+        "type": 2
+      },
       "seed": 104,
       "version": 1,
       "versionNonce": 104,
@@ -126,14 +132,25 @@
       "updated": 1,
       "link": null,
       "locked": false,
-      "points": [[0,0],[0,60]],
-      "lastCommittedPoint": [0,60],
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          60
+        ]
+      ],
+      "lastCommittedPoint": [
+        0,
+        60
+      ],
       "startBinding": null,
       "endBinding": null,
       "startArrowhead": null,
       "endArrowhead": "arrow"
     },
-
     {
       "id": "web_box",
       "type": "rectangle",
@@ -149,8 +166,12 @@
       "strokeStyle": "solid",
       "roughness": 2,
       "opacity": 100,
-      "groupIds": ["layerB"],
-      "roundness": {"type": 3},
+      "groupIds": [
+        "layerB"
+      ],
+      "roundness": {
+        "type": 3
+      },
       "seed": 105,
       "version": 1,
       "versionNonce": 105,
@@ -175,7 +196,9 @@
       "strokeStyle": "solid",
       "roughness": 0,
       "opacity": 100,
-      "groupIds": ["layerB"],
+      "groupIds": [
+        "layerB"
+      ],
       "roundness": null,
       "seed": 106,
       "version": 1,
@@ -195,7 +218,6 @@
       "originalText": "Layer B｜Web Dashboard（中控视图 + 轻量编辑写回 Airtable）",
       "lineHeight": 1.25
     },
-
     {
       "id": "overview",
       "type": "rectangle",
@@ -211,8 +233,12 @@
       "strokeStyle": "solid",
       "roughness": 2,
       "opacity": 100,
-      "groupIds": ["layerB"],
-      "roundness": {"type": 3},
+      "groupIds": [
+        "layerB"
+      ],
+      "roundness": {
+        "type": 3
+      },
       "seed": 107,
       "version": 1,
       "versionNonce": 107,
@@ -237,7 +263,9 @@
       "strokeStyle": "solid",
       "roughness": 0,
       "opacity": 100,
-      "groupIds": ["layerB"],
+      "groupIds": [
+        "layerB"
+      ],
       "roundness": null,
       "seed": 108,
       "version": 1,
@@ -257,7 +285,6 @@
       "originalText": "Overview（Fresh 感入口）\n- 看灵感/Passion/Threads（Top8）\n- 低噪音统计（标签热度、ToDo/Doing/Done 计数）\n- 目标：给你一天一个‘fresh’的启动感（不堆任务细节）",
       "lineHeight": 1.25
     },
-
     {
       "id": "journal",
       "type": "rectangle",
@@ -273,8 +300,12 @@
       "strokeStyle": "solid",
       "roughness": 2,
       "opacity": 100,
-      "groupIds": ["layerB"],
-      "roundness": {"type": 3},
+      "groupIds": [
+        "layerB"
+      ],
+      "roundness": {
+        "type": 3
+      },
       "seed": 109,
       "version": 1,
       "versionNonce": 109,
@@ -299,7 +330,9 @@
       "strokeStyle": "solid",
       "roughness": 0,
       "opacity": 100,
-      "groupIds": ["layerB"],
+      "groupIds": [
+        "layerB"
+      ],
       "roundness": null,
       "seed": 110,
       "version": 1,
@@ -319,7 +352,6 @@
       "originalText": "Journal（日常输入源）\n- 场景：高峰/赶地铁 → 思考今天要做什么\n- 形式：写成 2/3/4/5 条（短清单）\n- 动作：一键生成对应 Task（可拆/可验收）\n- 输出：同时可沉淀 Eureka（结论/原则）",
       "lineHeight": 1.25
     },
-
     {
       "id": "tasks",
       "type": "rectangle",
@@ -335,8 +367,12 @@
       "strokeStyle": "solid",
       "roughness": 2,
       "opacity": 100,
-      "groupIds": ["layerB"],
-      "roundness": {"type": 3},
+      "groupIds": [
+        "layerB"
+      ],
+      "roundness": {
+        "type": 3
+      },
       "seed": 111,
       "version": 1,
       "versionNonce": 111,
@@ -361,7 +397,9 @@
       "strokeStyle": "solid",
       "roughness": 0,
       "opacity": 100,
-      "groupIds": ["layerB"],
+      "groupIds": [
+        "layerB"
+      ],
       "roundness": null,
       "seed": 112,
       "version": 1,
@@ -381,7 +419,6 @@
       "originalText": "Tasks（执行面）\n- 按 Tag / 栏目分栏查看\n- 待完成总览：近30天 ToDo/Doing + 搜索\n- 中间：实时编辑并保存（改状态/日期/标签/标题/备注）\n- 目标：永远‘找得到任务’ + 立刻可调整",
       "lineHeight": 1.25
     },
-
     {
       "id": "calendar",
       "type": "rectangle",
@@ -397,8 +434,12 @@
       "strokeStyle": "solid",
       "roughness": 2,
       "opacity": 100,
-      "groupIds": ["layerB"],
-      "roundness": {"type": 3},
+      "groupIds": [
+        "layerB"
+      ],
+      "roundness": {
+        "type": 3
+      },
       "seed": 113,
       "version": 1,
       "versionNonce": 113,
@@ -423,7 +464,9 @@
       "strokeStyle": "solid",
       "roughness": 0,
       "opacity": 100,
-      "groupIds": ["layerB"],
+      "groupIds": [
+        "layerB"
+      ],
       "roundness": null,
       "seed": 114,
       "version": 1,
@@ -443,7 +486,6 @@
       "originalText": "Calendar（时间积木风格）\n- 日历视图 + 颜色系统与 7 个 tag 完全一致\n- 把任务从‘清单’变成‘时间占用’\n- 你熟悉的美学与信息密度",
       "lineHeight": 1.25
     },
-
     {
       "id": "summary",
       "type": "rectangle",
@@ -459,8 +501,12 @@
       "strokeStyle": "solid",
       "roughness": 2,
       "opacity": 100,
-      "groupIds": ["layerB"],
-      "roundness": {"type": 3},
+      "groupIds": [
+        "layerB"
+      ],
+      "roundness": {
+        "type": 3
+      },
       "seed": 115,
       "version": 1,
       "versionNonce": 115,
@@ -485,7 +531,9 @@
       "strokeStyle": "solid",
       "roughness": 0,
       "opacity": 100,
-      "groupIds": ["layerB"],
+      "groupIds": [
+        "layerB"
+      ],
       "roundness": null,
       "seed": 116,
       "version": 1,
@@ -505,7 +553,6 @@
       "originalText": "Summary（换视角：长期进展）\n- 按 7 个子栏/tag 做汇总\n- 从‘具体任务’切到‘主题进展’\n- 适合看长期推进节奏/滞后板块",
       "lineHeight": 1.25
     },
-
     {
       "id": "arrow_B_to_C",
       "type": "arrow",
@@ -522,7 +569,9 @@
       "roughness": 0,
       "opacity": 100,
       "groupIds": [],
-      "roundness": {"type": 2},
+      "roundness": {
+        "type": 2
+      },
       "seed": 117,
       "version": 1,
       "versionNonce": 117,
@@ -531,14 +580,25 @@
       "updated": 1,
       "link": null,
       "locked": false,
-      "points": [[0,0],[0,60]],
-      "lastCommittedPoint": [0,60],
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          60
+        ]
+      ],
+      "lastCommittedPoint": [
+        0,
+        60
+      ],
       "startBinding": null,
       "endBinding": null,
       "startArrowhead": null,
       "endArrowhead": "arrow"
     },
-
     {
       "id": "discord_box",
       "type": "rectangle",
@@ -554,8 +614,12 @@
       "strokeStyle": "solid",
       "roughness": 2,
       "opacity": 100,
-      "groupIds": ["layerC"],
-      "roundness": {"type": 3},
+      "groupIds": [
+        "layerC"
+      ],
+      "roundness": {
+        "type": 3
+      },
       "seed": 118,
       "version": 1,
       "versionNonce": 118,
@@ -580,7 +644,9 @@
       "strokeStyle": "solid",
       "roughness": 0,
       "opacity": 100,
-      "groupIds": ["layerC"],
+      "groupIds": [
+        "layerC"
+      ],
       "roundness": null,
       "seed": 119,
       "version": 1,
@@ -600,7 +666,6 @@
       "originalText": "Layer C｜Discord（输入端 + 输出端）\n\n输入：\n- 口述加任务/改规则/复盘（低摩擦）\n\n输出：\n- Cron 提醒：\n  · 周五 20:00 过期未完成\n  · 周六 10:00 交互自省（系统进化 + 给你建议）\n\n回执：写入 Airtable → 同步 Dashboard → 前端可见（可发现性）",
       "lineHeight": 1.25
     },
-
     {
       "id": "note_github",
       "type": "text",
@@ -635,6 +700,389 @@
       "containerId": null,
       "originalText": "GitHub 设计（从 MD 里提炼的小细节，可放到 Tips）：\n- 统一用组织/账号（如 HJN-Bot）承接产物；每个项目给 README + notes/ + assets/ + scripts/。\n- 输入 3-7 条提纲 → 直接生成可协作 repo（不是聊天爽，是交付物形状）。\n- 建议补：失败模式排查清单 + 可复现 setup（Discord + AWS + secrets）。",
       "lineHeight": 1.25
+    },
+    {
+      "id": "syscfg_367ea56e",
+      "type": "rectangle",
+      "x": 650,
+      "y": 1070,
+      "width": 480,
+      "height": 40,
+      "angle": 0,
+      "strokeColor": "#334155",
+      "backgroundColor": "#f8fafc",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 2,
+      "opacity": 100,
+      "groupIds": [
+        "layerB"
+      ],
+      "roundness": {
+        "type": 3
+      },
+      "seed": 201,
+      "version": 1,
+      "versionNonce": 201,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "syscfg_text_86923e77",
+      "type": "text",
+      "x": 670,
+      "y": 1078,
+      "width": 440,
+      "height": 30,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [
+        "layerB"
+      ],
+      "roundness": null,
+      "seed": 202,
+      "version": 1,
+      "versionNonce": 202,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "text": "System Config：关键文件索引 + Cron 清单 + 常用 Skills（高频高亮）",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 14,
+      "containerId": null,
+      "originalText": "System Config：关键文件索引 + Cron 清单 + 常用 Skills（高频高亮）",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "evo_title_413d5a1b",
+      "type": "text",
+      "x": 120,
+      "y": 1660,
+      "width": 1040,
+      "height": 30,
+      "angle": 0,
+      "strokeColor": "#111827",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "roundness": null,
+      "seed": 210,
+      "version": 1,
+      "versionNonce": 210,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "text": "从 1.0 → 2.0 → 3.0：你的真实工作习惯、痛点与升级路径（产品化叙事）",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 16,
+      "containerId": null,
+      "originalText": "从 1.0 → 2.0 → 3.0：你的真实工作习惯、痛点与升级路径（产品化叙事）",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "evo0_4e1ebada",
+      "type": "rectangle",
+      "x": 120,
+      "y": 1700,
+      "width": 320,
+      "height": 210,
+      "angle": 0,
+      "strokeColor": "#64748b",
+      "backgroundColor": "#f8fafc",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 2,
+      "opacity": 100,
+      "groupIds": [],
+      "roundness": {
+        "type": 3
+      },
+      "seed": 220,
+      "version": 1,
+      "versionNonce": 220,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "evo0t_8b0d4efc",
+      "type": "text",
+      "x": 138,
+      "y": 1718,
+      "width": 284,
+      "height": 174,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "roundness": null,
+      "seed": 230,
+      "version": 1,
+      "versionNonce": 230,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "text": "1.0 备忘录/提醒事项\n\n习惯：\n- 早上确认 ToDo\n- 记灵感/链接/附件\n\n优点：轻、随手\n缺点：历史难回顾；学习变快后难复盘",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 14,
+      "containerId": null,
+      "originalText": "1.0 备忘录/提醒事项\n\n习惯：\n- 早上确认 ToDo\n- 记灵感/链接/附件\n\n优点：轻、随手\n缺点：历史难回顾；学习变快后难复盘",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "evo1_73a42926",
+      "type": "rectangle",
+      "x": 480,
+      "y": 1700,
+      "width": 320,
+      "height": 210,
+      "angle": 0,
+      "strokeColor": "#0ea5e9",
+      "backgroundColor": "#f0f9ff",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 2,
+      "opacity": 100,
+      "groupIds": [],
+      "roundness": {
+        "type": 3
+      },
+      "seed": 221,
+      "version": 1,
+      "versionNonce": 221,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "evo1t_2bac07c8",
+      "type": "text",
+      "x": 498,
+      "y": 1718,
+      "width": 284,
+      "height": 174,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "roundness": null,
+      "seed": 231,
+      "version": 1,
+      "versionNonce": 231,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "text": "2.0 ChatGPT 中控 + Airtable\n\n能力：\n- 对话→生成 Task\n- 低摩擦写入 Airtable\n\n痛点：\n- 记忆不稳：规则/表结构要重复解释\n- 不够丝滑（需要你反复定义）",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 14,
+      "containerId": null,
+      "originalText": "2.0 ChatGPT 中控 + Airtable\n\n能力：\n- 对话→生成 Task\n- 低摩擦写入 Airtable\n\n痛点：\n- 记忆不稳：规则/表结构要重复解释\n- 不够丝滑（需要你反复定义）",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "evo2_020e24e6",
+      "type": "rectangle",
+      "x": 840,
+      "y": 1700,
+      "width": 320,
+      "height": 210,
+      "angle": 0,
+      "strokeColor": "#111827",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 2,
+      "opacity": 100,
+      "groupIds": [],
+      "roundness": {
+        "type": 3
+      },
+      "seed": 222,
+      "version": 1,
+      "versionNonce": 222,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "evo2t_77b13a16",
+      "type": "text",
+      "x": 858,
+      "y": 1718,
+      "width": 284,
+      "height": 174,
+      "angle": 0,
+      "strokeColor": "#0f172a",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 1,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "roundness": null,
+      "seed": 232,
+      "version": 1,
+      "versionNonce": 232,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "text": "3.0 OpenClaw 三层闭环\n\n输入：Discord+Web\n输出：Web+Cron\n\n强化：\n- 规则固化成 Skills/Config\n- Cron 提醒 + 自省复盘\n- Dashboard 可发现性（待完成总览+搜索）",
+      "fontSize": 15,
+      "fontFamily": 1,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "baseline": 14,
+      "containerId": null,
+      "originalText": "3.0 OpenClaw 三层闭环\n\n输入：Discord+Web\n输出：Web+Cron\n\n强化：\n- 规则固化成 Skills/Config\n- Cron 提醒 + 自省复盘\n- Dashboard 可发现性（待完成总览+搜索）",
+      "lineHeight": 1.25
+    },
+    {
+      "id": "evo_arrow_3eeb2f5c",
+      "type": "arrow",
+      "x": 440,
+      "y": 1805.0,
+      "width": 40,
+      "height": 0,
+      "angle": 0,
+      "strokeColor": "#111827",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "roundness": {
+        "type": 2
+      },
+      "seed": 240,
+      "version": 1,
+      "versionNonce": 240,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          40,
+          0
+        ]
+      ],
+      "lastCommittedPoint": [
+        40,
+        0
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
+    },
+    {
+      "id": "evo_arrow_8d773538",
+      "type": "arrow",
+      "x": 800,
+      "y": 1805.0,
+      "width": 40,
+      "height": 0,
+      "angle": 0,
+      "strokeColor": "#111827",
+      "backgroundColor": "transparent",
+      "fillStyle": "hachure",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 0,
+      "opacity": 100,
+      "groupIds": [],
+      "roundness": {
+        "type": 2
+      },
+      "seed": 241,
+      "version": 1,
+      "versionNonce": 241,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          40,
+          0
+        ]
+      ],
+      "lastCommittedPoint": [
+        40,
+        0
+      ],
+      "startBinding": null,
+      "endBinding": null,
+      "startArrowhead": null,
+      "endArrowhead": "arrow"
     }
   ],
   "appState": {
