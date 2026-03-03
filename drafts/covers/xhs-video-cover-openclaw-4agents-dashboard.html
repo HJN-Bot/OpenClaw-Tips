@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>XHS Cover · OpenClaw 4 Agents + Dashboard</title>
+  <style>
+    :root{
+      --bg0:#070A12;
+      --bg1:#0B1224;
+      --text:#EAF0FF;
+      --muted:rgba(234,240,255,0.72);
+      --muted2:rgba(234,240,255,0.55);
+      --accent:#7C5CFF;
+      --accent2:#2EE4FF;
+      --card:rgba(255,255,255,0.07);
+      --border:rgba(255,255,255,0.14);
+      --good:#22C55E;
+    }
+
+    /* Export size: 1080 x 1440 (XHS vertical cover) */
+    html,body{height:100%;margin:0;background:#000;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","PingFang SC","Helvetica Neue",Arial,sans-serif;}
+    .frame{
+      width:1080px;height:1440px;
+      margin:0 auto;
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(1200px 700px at 12% 12%, rgba(124,92,255,0.35), transparent 58%),
+        radial-gradient(1100px 650px at 82% 18%, rgba(46,228,255,0.22), transparent 60%),
+        radial-gradient(1000px 650px at 55% 95%, rgba(124,92,255,0.20), transparent 62%),
+        linear-gradient(180deg,var(--bg1),var(--bg0));
+      color:var(--text);
+    }
+    .noise{position:absolute;inset:0;opacity:0.09;mix-blend-mode:overlay;pointer-events:none;
+      background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/></filter><rect width="160" height="160" filter="url(%23n)" opacity="0.45"/></svg>');
+    }
+    .topGlow{position:absolute;left:-120px;top:-120px;width:520px;height:520px;border-radius:999px;background:rgba(124,92,255,0.16);filter:blur(26px);}
+
+    .pad{position:absolute;inset:0;padding:78px 74px;display:flex;flex-direction:column;gap:26px;}
+
+    .badgeRow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+    .badge{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:12px 14px;border-radius:999px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.12);
+      color:var(--muted);
+      font-size:22px;
+      backdrop-filter: blur(10px);
+    }
+    .dot{width:12px;height:12px;border-radius:99px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 0 10px rgba(124,92,255,0.12);}
+
+    h1{
+      margin:0;
+      font-weight:850;
+      letter-spacing:-0.02em;
+      line-height:1.04;
+      font-size:84px;
+      text-wrap:balance;
+    }
+    .sub{
+      font-size:30px;
+      line-height:1.55;
+      color:var(--muted);
+      max-width:880px;
+    }
+
+    .cards{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+    .card{
+      padding:18px 18px;
+      border-radius:22px;
+      background:linear-gradient(180deg,rgba(255,255,255,0.10),rgba(255,255,255,0.05));
+      border:1px solid rgba(255,255,255,0.14);
+      box-shadow:0 18px 60px rgba(0,0,0,0.35);
+      min-height:150px;
+    }
+    .card .t{font-size:22px;color:var(--muted2);text-transform:uppercase;letter-spacing:0.12em;}
+    .card .v{margin-top:12px;font-size:34px;font-weight:800;letter-spacing:-0.01em;}
+    .card .d{margin-top:10px;font-size:24px;color:var(--muted);line-height:1.45;}
+
+    .pillRow{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+    .pill{
+      padding:12px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.14);
+      background:rgba(0,0,0,0.18);
+      color:rgba(234,240,255,0.78);
+      font-size:22px;
+    }
+    .pill.hot{border-color:rgba(124,92,255,0.38);background:rgba(124,92,255,0.14);color:rgba(234,240,255,0.9);}
+
+    .footer{
+      position:absolute;left:74px;right:74px;bottom:48px;
+      display:flex;justify-content:space-between;align-items:center;
+      font-size:22px;color:var(--muted2);
+    }
+    .brand{display:flex;gap:10px;align-items:center;}
+    .brand .logo{
+      width:38px;height:38px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow:0 16px 40px rgba(124,92,255,0.18);
+    }
+
+    /* Safe area hint (won't show in final if you screenshot crop) */
+    .safe{position:absolute;inset:0;border:2px dashed rgba(255,255,255,0.08);border-radius:18px;margin:26px;pointer-events:none;}
+  </style>
+</head>
+<body>
+  <div class="frame" role="img" aria-label="Xiaohongshu video cover: OpenClaw 4 agents + dashboard workflow">
+    <div class="topGlow"></div>
+    <div class="noise"></div>
+    <div class="safe"></div>
+
+    <div class="pad">
+      <div class="badgeRow">
+        <div class="badge"><span class="dot"></span><span>OpenClaw 实战分享</span></div>
+        <div class="badge">4 个 AI 员工协作</div>
+        <div class="badge">个人中控 Dashboard</div>
+      </div>
+
+      <h1>
+        我把 OpenClaw<br/>
+        玩成了「个人公司」
+      </h1>
+      <div class="sub">
+        昨天的分享我讲了：Airtable 真源 + Web 看板中控 + Discord 输入 + Cron 主动提醒，
+        以及 4 个 Agent 如何分工协作，让你每天都能“找到任务、推进任务、复盘迭代”。
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="t">Workflow</div>
+          <div class="v">Airtable → Dashboard</div>
+          <div class="d">单一真源 + 可发现性（待完成总览/搜索）</div>
+        </div>
+        <div class="card">
+          <div class="t">Agents</div>
+          <div class="v">Andrew / Rex / Lulu / Alex</div>
+          <div class="d">主脑 · 执行推进 · 写作输出 · 情绪关系</div>
+        </div>
+        <div class="card">
+          <div class="t">Output</div>
+          <div class="v">Web + Cron</div>
+          <div class="d">周五过期提醒 · 周六交互自省复盘</div>
+        </div>
+        <div class="card">
+          <div class="t">Deliverable</div>
+          <div class="v">可分享的 HTML Slides</div>
+          <div class="d">审美/排版/动效：像产品一样讲清楚</div>
+        </div>
+      </div>
+
+      <div class="pillRow">
+        <span class="pill hot">#AI工作流</span>
+        <span class="pill">#多Agent协作</span>
+        <span class="pill">#效率系统</span>
+        <span class="pill">#Airtable</span>
+        <span class="pill">#Dashboard</span>
+      </div>
+
+      <div class="footer">
+        <div class="brand"><span class="logo"></span><span>HJN · OpenClaw Tips</span></div>
+        <div>小红书视频封面（1080×1440）</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
