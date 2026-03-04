@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OpenClaw 个人公司化系统 · 配置说明（v0）</title>
+  <style>
+    :root{
+      --paper:#f5efe6;
+      --paper2:#efe6d9;
+      --ink:#1b1a19;
+      --muted:#5b544a;
+      --navy:#141827;
+      --navy2:#1b2238;
+      --orange:#c26a3a;
+      --line: rgba(20,24,39,0.18);
+      --card: rgba(255,255,255,0.72);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, var(--paper), var(--paper2));
+    }
+    .page{
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 42px 26px 60px;
+    }
+
+    .topline{
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    h1{
+      margin: 10px 0 8px;
+      font-size: 56px;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      font-weight: 900;
+    }
+    .h1accent{ color: var(--orange); }
+    .subtitle{
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 70ch;
+    }
+
+    .divider{ margin: 26px 0 18px; height: 2px; background: rgba(20,24,39,0.65); }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 860px){ .grid2{ grid-template-columns:1fr; } h1{font-size:42px;} }
+
+    .box{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+    }
+    .boxTitle{
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--navy);
+      font-weight: 900;
+    }
+    .ul{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); line-height:1.8; }
+    .ul b{ color: var(--ink); }
+
+    .navTag{
+      position: absolute;
+      right: 26px;
+      top: 26px;
+      width: 180px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, var(--navy2), var(--navy));
+      color: #e8e8ef;
+      padding: 14px 14px;
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+    .navTag .t{ font-size: 11px; letter-spacing:0.22em; text-transform:uppercase; opacity:0.8; }
+    .navTag .i{ margin-top:10px; display:flex; flex-direction:column; gap:8px; font-size: 12px; }
+    .pill{
+      display:inline-flex;
+      width: fit-content;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: rgba(232,232,239,0.92);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .sectionTitle{
+      display:flex; align-items:center; gap:10px;
+      margin-top: 18px;
+    }
+    .num{
+      width: 38px; height: 26px;
+      border-radius: 12px;
+      background: var(--navy);
+      color: #f2f2f6;
+      display:flex; align-items:center; justify-content:center;
+      font-weight: 900;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+    }
+    .sect{
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy);
+      font-size: 12px;
+    }
+
+    .agentRow{ display:grid; grid-template-columns: 220px 1fr; gap: 14px; margin-top: 14px; }
+    @media (max-width: 860px){ .agentRow{ grid-template-columns: 1fr; } }
+
+    .sam{
+      background: linear-gradient(180deg, var(--navy2), var(--navy));
+      color:#eef0f8;
+      border-radius: var(--radius);
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+    .sam .big{ font-size: 42px; font-weight: 950; letter-spacing:0.02em; }
+    .sam .small{ margin-top: 6px; font-size: 12px; opacity: 0.82; line-height:1.6; }
+
+    .agentsGrid{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 860px){ .agentsGrid{ grid-template-columns: 1fr; } }
+
+    .agentCard{ background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+    .agentCard .name{ font-weight: 900; }
+    .agentCard .desc{ margin-top: 8px; color: var(--muted); line-height:1.7; }
+
+    .footer{ margin-top: 28px; color: rgba(20,24,39,0.55); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <div class="page" style="position:relative;">
+    <div class="navTag">
+      <div class="t">Infra / Agent / Memory</div>
+      <div class="i">
+        <span class="pill">FRONTEND</span>
+        <span class="pill">AUTOMATION</span>
+        <span class="pill">KPI</span>
+      </div>
+    </div>
+
+    <div class="topline">PERSONAL AI SYSTEM · CONFIGURATION NOTES</div>
+    <h1>Open<span class="h1accent">Claw</span> A2A 四维提升计划</h1>
+    <div class="subtitle">
+      把“主脑 Sam + 四部门频道”做成公司化协作系统：A2A 协作/互通/开会 → 四维 KPI → 奖励机制 → 自我进化。
+      这是 v0 说明页（用于对外分享/内部对齐）。
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="sectionTitle"><div class="num">01</div><div class="sect">基础架构</div></div>
+    <div class="grid2" style="margin-top:12px;">
+      <div class="box">
+        <div class="boxTitle">三层交互</div>
+        <ul class="ul">
+          <li><b>Airtable</b>：Tasks/Ideas/Eurekas（单一真源）</li>
+          <li><b>Web</b>：Dashboard 中控（Overview/Journal/Tasks/Calendar/KPI/Config）</li>
+          <li><b>Discord</b>：输入端 + Cron 提醒输出</li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="boxTitle">自动化节奏（v0）</div>
+        <ul class="ul">
+          <li><b>24:00 EoD</b>：四频道日报（现有）</li>
+          <li><b>周五 20:00</b>：过期未完成提醒</li>
+          <li><b>周六 10:00</b>：你个人自省（你 ↔ Sam）</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sectionTitle"><div class="num">02</div><div class="sect">Agent 多脑架构（A2A）</div></div>
+    <div class="agentRow">
+      <div class="sam">
+        <div style="font-size:12px; letter-spacing:0.18em; opacity:0.82;">CEO / MAIN BRAIN</div>
+        <div class="big">SAM</div>
+        <div class="small">收敛目标 · 分派任务 · 合并周报 · 奖惩机制 · 更新 playbook/changelog</div>
+      </div>
+      <div class="agentsGrid">
+        <div class="agentCard"><div class="name">AI（Andrew）</div><div class="desc">AI 体系使用频率 · 产出能力/效率 · 前沿/深刻/积极能量自检</div></div>
+        <div class="agentCard"><div class="name">Work（Rex）</div><div class="desc">进度/交付 · 风险闭环 · Team management · 领导力动作</div></div>
+        <div class="agentCard"><div class="name">I/O（Lulu）</div><div class="desc">视频播放/粉丝增长 · 多平台矩阵 · 影响力与收益扩增</div></div>
+        <div class="agentCard"><div class="name">Personal（Alex）</div><div class="desc">幸福/稳定 · Journal 成熟度 · 关系经营 · 情绪恢复速度</div></div>
+      </div>
+    </div>
+
+    <div class="sectionTitle"><div class="num">03</div><div class="sect">KPI 面板（迭代变强）</div></div>
+    <div class="box" style="margin-top:12px;">
+      <div class="boxTitle">PowerBI 风格（v0）</div>
+      <ul class="ul">
+        <li>4 张 KPI 卡（Andrew/Rex/Lulu/Alex）+ 环比 + 解释</li>
+        <li>趋势区：任务状态（ToDo/Doing/Done）+ 产出资产（GitHub/Docs/Slides）</li>
+        <li>Lulu：增长数据先手动输入（后续写回 Airtable）</li>
+        <li>证据列表：Threads + 本周任务（可下钻）</li>
+      </ul>
+    </div>
+
+    <div class="sectionTitle"><div class="num">04</div><div class="sect">奖励机制 & 自我进化</div></div>
+    <div class="grid2" style="margin-top:12px;">
+      <div class="box">
+        <div class="boxTitle">奖励（v0）</div>
+        <ul class="ul">
+          <li>四维 KPI 达标 ≥3：自动生成本周高光回顾 + 奖励活动建议</li>
+          <li>高贡献 Agent：下周自动化优先权 + skill 安装优先权（需 vetter）</li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="boxTitle">自我进化路线</div>
+        <ul class="ul">
+          <li>先你个人自省（你 ↔ Sam）</li>
+          <li>再组织自省：每部门每周 1 个“进化动作”（skill/SOP/修摩擦点/写 playbook）</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer">OPENCLAW · PERSONAL AI SYSTEM CONFIG · 2026-03-04 · v0</div>
+  </div>
+</body>
+</html>
