@@ -250,3 +250,72 @@ Dashboard 直接读取 Desc 展示证据与状态。
 - AI Collection / AI Solid Knowledge / 其他既有 Wiki 内容，视为各 Agent 的长期上下文来源。
 - 新内容先写 `- Sam` 草稿，再由你合并到正式内容。
 - 避免覆盖旧文档主体，优先“增量页 + 链接互引”。
+
+
+---
+
+## 九、Andrew Channel 可执行 Prompt / Skill 触发规范（落地版）
+
+> 目标：当 Jianan 在 Andrew 频道一句话下指令时，系统能自动识别并调用 Andrew 的 Feishu 工作流 skill，写入对应 Wiki 草稿（`... - Sam`）并回写任务证据。
+
+### 9.1 触发意图识别（Andrew）
+以下类型的用户输入，默认触发 `feishu-agent-workflow`（Andrew 路由）：
+
+1) **观点学习卡**（AI时代观点）
+- 触发句型示例：
+  - “Andrew，把我今天这个 AI 观点整理成 draft”
+  - “Andrew，把这段 YouTube 学习内容写成观点总结”
+
+2) **技巧方法卡**（AI技巧总结）
+- 触发句型示例：
+  - “Andrew，把这个 coding 技巧写进 AI技巧总结”
+  - “把 changelog / implementation plan 这个方法总结成可复用卡片”
+
+3) **Prompt 资产卡**（精品Prompt）
+- 触发句型示例：
+  - “Andrew，把这个 prompt 沉淀到精品Prompt”
+  - “把这组提示词整理成模板，并给使用边界”
+
+4) **画像更新卡**（佳楠的进化）
+- 触发句型示例：
+  - “Andrew，更新我这个阶段的能力画像和目标”
+  - “按季度更新我的背景画像 + 下阶段目标”
+
+### 9.2 Andrew 默认落点（不反复追问）
+- 观点学习卡 -> `AI Collection / AI时代观点`
+- 技巧方法卡 -> `AI Collection / AI技巧总结`
+- Prompt资产卡 -> `AI Collection / 精品Prompt`
+- 画像更新卡 -> `AI Collection / 佳楠的进化`
+- 底层沉淀（概念/长期知识） -> `AI Solid Knowledge`
+
+### 9.3 输出模板（执行优先）
+每次输出采用 V2 实操模板（Runbook/Deliverables/Decision）中的相应子模版，并至少包含：
+- Context（任务来源）
+- Progress（Top Doing/卡点）
+- Deliverable（一句话产出）
+- Next（<=30min）
+- KPI Check（Self KPI / User KPI）
+
+### 9.4 资产回流规则（Andrew 特有）
+当输出为“观点学习卡”时：
+1) 自动抽取 1~5 条金句（可复用表达）
+2) 回写 Airtable `Sounds Smart`（Name/Phrase/Example/Source）
+3) 在任务 Desc 追加：`SoundsSmart: <写入条数>`
+
+### 9.5 安全边界（强约束）
+- 只创建/更新 `... - Sam` 草稿页
+- 不改非 Sam 文档（除非用户明确指定）
+- 不删除（删除由用户手动执行）
+- 覆盖/批量更新需二次确认
+
+### 9.6 Andrew Channel 快捷指令（建议）
+- `/andrew insight <内容>` -> 观点学习卡
+- `/andrew method <内容>` -> 技巧方法卡
+- `/andrew prompt <内容>` -> Prompt资产卡
+- `/andrew profile-update <内容>` -> 画像更新卡
+
+### 9.7 最小闭环（每次都做）
+1) 识别意图并选模板
+2) 写入 Feishu 草稿（`... - Sam`）
+3) 追加回写 Task Desc（Deliverable/Feishu/GitHub/Owner/Status/Next）
+4) 若是观点卡，额外回流 Sounds Smart
