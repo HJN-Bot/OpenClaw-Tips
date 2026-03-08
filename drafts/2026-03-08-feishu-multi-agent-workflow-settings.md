@@ -411,3 +411,140 @@ Dashboard 直接读取 Desc 展示证据与状态。
 - 抽取 1~3 条金句
 - 回流 Airtable Sounds Smart
 - 在 Desc 增加 `SoundsSmart: <count>`
+
+
+---
+
+## 十一、Lulu 板块补充：She Codes Herself（灵感→文案/脚本→发布资产）
+
+> 定位：把“灵感输入”快速转成“可发布资产”。
+
+### 11.1 目标与范围
+Lulu 负责两个核心产出技能：
+1) **图文文案生成**（公众号/小红书）
+2) **视频脚本生成**（含镜头节奏/口播文本/转场建议）
+
+工作站：`She Codes Herself` Wiki。
+
+### 11.2 输入来源
+- 你在 Wiki/Discord 提供的灵感（主题、角度、素材）
+- Dashboard 对应标签任务（`输出生产` + `兴趣探索`）
+- 历史内容上下文（旧脚本、旧发布风格）
+
+### 11.3 输出分层（双落点）
+- **Feishu（内容中台）**：策略、草稿、复盘（`... - Sam`）
+- **GitHub（可下载资产）**：可执行/可下载文件（md/html/脚本/素材清单）
+
+原则：
+- Feishu 放“阅读与协作内容”
+- GitHub 放“交付与下载内容”
+
+### 11.4 关键联动规则（必须）
+当 Lulu 生成 GitHub 资产后，必须在 Feishu 同名文档回写：
+- `GitHub Asset Link: <repo/path>`
+- `Asset Type: script / article / html / storyboard / checklist`
+- `Usage: 如何打开与使用`
+
+同时回写 Task Desc：
+- Deliverable
+- Feishu Link
+- GitHub Link
+- Status
+
+### 11.5 She Codes Herself 模板（v1）
+
+#### A) 灵感转选题卡
+```markdown
+# Idea Card - Sam
+
+## Input
+- 灵感来源：
+- 目标受众：
+
+## 选题角度（3选1）
+1)
+2)
+3)
+
+## 推荐主角度
+-
+
+## 下一步
+- 先产出图文/视频：
+```
+
+#### B) 图文文案卡（公众号/小红书）
+```markdown
+# Content Draft - Sam
+
+## 平台
+- 公众号 / 小红书
+
+## 标题候选（3个）
+1)
+2)
+3)
+
+## 正文结构
+- Hook
+- 核心观点
+- 操作步骤
+- 结尾CTA
+
+## 发布参数
+- 封面建议：
+- 关键词：
+```
+
+#### C) 视频脚本卡
+```markdown
+# Video Script - Sam
+
+## 主题
+-
+
+## 时长
+- 30s / 60s / 90s
+
+## 分镜脚本
+1) 画面：
+   口播：
+2) 画面：
+   口播：
+
+## 动效/转场建议
+-
+
+## 交付资产
+- GitHub Link:
+```
+
+#### D) 发布复盘卡
+```markdown
+# Publish Review - Sam
+
+## 本次发布
+- 链接：
+- 平台：
+
+## 数据
+- 播放/阅读：
+- 互动：
+
+## 复盘
+- 做对了：
+- 可改进：
+
+## 下一条动作（<=30min）
+-
+```
+
+### 11.6 Lulu 触发句型（频道）
+- “Lulu，把这个灵感变成小红书文案”
+- “Lulu，按这个主题给我视频脚本”
+- “Lulu，把可下载资产放 GitHub，并把链接写回 wiki”
+
+### 11.7 安全边界
+- 只创建/更新 `... - Sam`
+- 不改你的正式稿（除非明确要求）
+- 不删除
