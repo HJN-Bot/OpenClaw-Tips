@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "topic": "3个Skills + 1个MCP：用纯脚本自动生成动画视频（从截图到成片）",
+    "type": "tutorial",
+    "durationSec": 18,
+    "ratio": "9:16",
+    "tone": "neutral",
+    "lang": "zh"
+  },
+  "scenes": [
+    {
+      "id": "t1",
+      "kind": "title-card",
+      "durationMs": 3000,
+      "onScreenText": "不用剪辑软件\n用脚本生成动画视频",
+      "subtitle": "3 Skills + 1 MCP（MVP演示）",
+      "voiceover": "我在做一个最小工作流：你只给主题和几张截图，剩下的脚本、配音、字幕、动画渲染，自动出片。"
+    },
+    {
+      "id": "t2",
+      "kind": "screenshot-explain",
+      "durationMs": 12000,
+      "asset": "assets/01.png",
+      "onScreenText": "这张图的结构：\n3个Skills + 1个MCP",
+      "voiceover": "这里的核心是把剪辑拆成四个模块：第一，脚本技能把内容写成分镜。第二，TTS技能把旁白变成音频和字幕。第三，渲染技能把截图、字幕、动效合成视频。第四，用 GitHub MCP 把产物沉淀成可复现模板。",
+      "annotations": [
+        {"type": "highlight-box", "x": 0.07, "y": 0.36, "w": 0.43, "h": 0.25, "text": "3个 Skills"},
+        {"type": "highlight-box", "x": 0.62, "y": 0.40, "w": 0.30, "h": 0.10, "text": "GitHub MCP"}
+      ],
+      "motion": "push-in"
+    },
+    {
+      "id": "t3",
+      "kind": "summary-card",
+      "durationMs": 3000,
+      "onScreenText": "下一步：\n截图→storyboard→TTS→渲染→mp4",
+      "subtitle": "你更想先看教程类还是观点类？",
+      "voiceover": "我会先跑通教程类和观点类两条MVP，再把效果截图给你审阅，按你的反馈迭代镜头模板。"
+    }
+  ]
+}
