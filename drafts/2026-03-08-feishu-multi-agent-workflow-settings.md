@@ -701,3 +701,160 @@ Rex 的重点职责：
 - “Rex，按路演结构帮我拆每页内容和证据”
 - “Rex，把这个学习心得沉淀为可复用SOP”
 - “Rex，在RAify视角给我本周导师问题清单”
+
+
+---
+
+## 十三、Alex 板块补充：思维宫殿（Personal 工作流重构）
+
+> 定位：把“个人状态管理”从零散记录变成可执行系统，覆盖情感、健身、兴趣、个人能力四条线。
+
+### 13.1 板块重构建议（思维宫殿）
+将当前历史内容保留为 Archive，不删除；新增 4 个执行栏目：
+
+1) **情感关系**（Relationship）
+2) **运动健身**（Fitness）
+3) **兴趣爱好**（Interests）
+4) **个人能力**（Personal Capability）
+
+补充两个基础栏目：
+5) **Daily Log（日更新）**
+6) **Weekly Review（周复盘）**
+
+### 13.2 输入来源
+- Airtable / Dashboard 标签：`情感关系`、`健身`、（可选）`兴趣探索`
+- 你口述近况/计划/困惑
+- 历史日志与方法卡（作为上下文）
+
+### 13.3 输出节奏
+- **日更新**：按需触发（有输入就写）
+- **周复盘**：每周固定 1 次
+- **动作卡**：在出现高价值方法时沉淀
+
+### 13.4 模板（v1）
+
+#### A) Personal Daily Log - Sam
+```markdown
+# Personal Daily Log - Sam
+
+## 今日状态（1-10）
+- 情绪：
+- 体能：
+- 专注：
+
+## 今日事件
+- 发生了什么：
+
+## 今日动作
+- 情感：
+- 健身：
+- 兴趣：
+- 能力：
+
+## 今日收获
+-
+
+## 明日最小动作（<=30min）
+-
+```
+
+#### B) Relationship Action Card - Sam
+```markdown
+# Relationship Action Card - Sam
+
+## 场景
+-
+
+## 目标
+-
+
+## 沟通动作（可执行）
+1)
+2)
+
+## 风险点
+-
+
+## 结果与复盘
+-
+```
+
+#### C) Fitness Progress Card - Sam
+```markdown
+# Fitness Progress Card - Sam
+
+## 本周目标
+-
+
+## 执行记录
+- 次数：
+- 时长：
+- 强度：
+
+## 指标
+- 睡眠：
+- 心率/体重（可选）：
+
+## 调整建议
+-
+```
+
+#### D) Interest & Capability Card - Sam
+```markdown
+# Interest & Capability Card - Sam
+
+## 本次主题
+-
+
+## 学了什么
+-
+
+## 产出证据
+- Feishu / GitHub / 其它链接：
+
+## 可复用方法
+-
+
+## 下一步
+-
+```
+
+#### E) Personal Weekly Review - Sam
+```markdown
+# Personal Weekly Review - Sam
+
+## 本周四线评分（1-10）
+- 情感关系：
+- 运动健身：
+- 兴趣爱好：
+- 个人能力：
+
+## 本周亮点
+-
+
+## 本周卡点
+-
+
+## 下周三步动作
+1)
+2)
+3)
+```
+
+### 13.5 与 Dashboard 联动（Personal）
+- 看板中 Alex 行展示：
+  - 本周任务切换（情感/健身 tag）
+  - 进度条（Done/Doing/ToDo）
+  - 证据链接（Feishu/GitHub）
+- 交付后回写 Task Desc（统一格式）
+
+### 13.6 安全与边界
+- 默认只写 `... - Sam` 草稿页
+- 敏感内容不外发
+- 不删除历史页面
+- 你确认后再合并到正式长期页面
+
+### 13.7 Alex 触发句型
+- “Alex，写今天的 Personal Daily Log”
+- “Alex，把这段关系沟通沉淀成 Action Card”
+- “Alex，按本周情况给我 Personal Weekly Review”
