@@ -858,3 +858,34 @@ Rex 的重点职责：
 - “Alex，写今天的 Personal Daily Log”
 - “Alex，把这段关系沟通沉淀成 Action Card”
 - “Alex，按本周情况给我 Personal Weekly Review”
+
+
+---
+
+## 十四、Swarm 适配落地（Sam 主脑 + 子频道蜂群）
+
+### 14.1 架构原则（写死）
+1) **Sam 是唯一主脑与最终裁决者**。
+2) 4 子频道 agent 可提案/执行/协商，但不做最终定夺。
+3) 所有关键结论统一回写 Airtable Task Desc（单一真源）。
+4) 出现冲突由 Sam 仲裁（优先级高于子 agent 本地策略）。
+
+### 14.2 Skill 供应链策略（只吸收不外发）
+- 允许：`fetch / import / local copy`
+- 禁止：`publish / share / cloud sync`（默认关闭）
+- 外部 skill 下载后必须：
+  - 记录来源与版本（source/version）
+  - 本地改造后标记 `forked-local`
+  - 不向外回传定制改动
+
+### 14.3 在 EvoMap 现有最小能力基础上新增 4 件事
+1) Skill Sandbox Test（下载后先沙箱冒烟）
+2) Compatibility Check（命名/依赖/流程冲突检查）
+3) Policy Gate（外发/删除/覆盖类动作默认禁用）
+4) Version Pin（锁版本，避免上游漂移）
+
+### 14.4 任务执行协议（Swarm）
+- 主任务（Epic） -> 子任务（Agent）
+- 状态：ToDo/Doing/Blocked/Review/Done
+- 每次关键进展立即 append-update（不等 EOD）
+- 卡住必须提问 Sam（禁止静默）
