@@ -319,3 +319,95 @@ Dashboard 直接读取 Desc 展示证据与状态。
 2) 写入 Feishu 草稿（`... - Sam`）
 3) 追加回写 Task Desc（Deliverable/Feishu/GitHub/Owner/Status/Next）
 4) 若是观点卡，额外回流 Sounds Smart
+
+
+---
+
+## 十、Andrew 第二板块补充：AI Solid Knowledge（Paper-first）
+
+> 定位：以“啃论文 + 学习方法 + 每日学习汇总”为主，不追求花哨，强调可复用分析框架。
+
+### 10.1 输入来源
+- Dashboard 灵感板块 `Papers`（默认 topic: `cs.AI / cs.CL / cs.LG`）
+- 用户口述学习记录（语音/文本）
+- 既有 Wiki 中“每日学习汇总”相关内容（作为上下文）
+
+### 10.2 输出优先级（Andrew）
+1) **Paper 深读卡**（最高优先）
+2) **每日学习汇总卡**（次优先）
+3) **学习方法卡**（仅维护，不高频）
+4) GitHub coding 深读（当前暂不写）
+
+### 10.3 Paper 深读卡模板（v1）
+```markdown
+# Paper Deep Dive - Sam
+
+## Paper Meta
+- Title:
+- Link:
+- Topic: (cs.AI/cs.CL/cs.LG)
+
+## Scan（快速扫描）
+- 这篇在解决什么问题：
+- 核心方法一句话：
+- 主要结果一句话：
+
+## Learn（学习收获）
+- 我学到的 3 个点：
+1)
+2)
+3)
+
+## Link（知识链接）
+- 与我现有项目/方法的连接：
+- 可复用到 CER/工作/内容输出的点：
+
+## Inspire（创新启发）
+- 一个可实验方向：
+- 一个可立即行动（<=30min）：
+```
+
+### 10.4 每日学习汇总模板（v1）
+```markdown
+# Daily Learning Summary - Sam
+
+## 今日输入
+- Paper/视频/文章：
+
+## 今日扫描结论
+- Top1 观点：
+- Top1 方法：
+
+## 今日收获
+- 认知增量：
+- 技术增量：
+
+## 明日动作
+- 30min 可验收动作：
+```
+
+### 10.5 Bitable/表格联动建议（先扩展，不替代正文）
+可在 AI Solid Knowledge 下维护一个“Paper Tracker（多维表格）”，字段建议：
+- Date
+- Source Link
+- Topic
+- Problem
+- Method
+- Result
+- Relevance to Jianan (1-5)
+- Next Action
+- Status (Scanned / Deep-dived / Applied)
+
+### 10.6 与 Dashboard 联动规则
+- Dashboard Papers 仅作为“发现入口”
+- 真正沉淀写入 AI Solid Knowledge 的 `... - Sam` 草稿
+- 产出后回写 Task Desc：
+  - `Deliverable: Paper Deep Dive`
+  - `Feishu: <draft link>`
+  - `Status: Draft/Review`
+
+### 10.7 Sounds Smart 回流（观点类）
+当论文解读中出现可复用金句时：
+- 抽取 1~3 条金句
+- 回流 Airtable Sounds Smart
+- 在 Desc 增加 `SoundsSmart: <count>`
