@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "topic": "<一句话主题>",
+    "type": "tutorial",
+    "durationSec": 75,
+    "ratio": "9:16",
+    "tone": "neutral",
+    "lang": "zh"
+  },
+  "scenes": [
+    {
+      "id": "s1",
+      "kind": "title-card",
+      "durationMs": 3000,
+      "onScreenText": "<标题大字>",
+      "subtitle": "<副标题/收益>",
+      "voiceover": "<开场旁白>"
+    },
+    {
+      "id": "s2",
+      "kind": "screenshot-explain",
+      "durationMs": 12000,
+      "asset": "assets/01.png",
+      "onScreenText": "<这一屏你要观众看什么>",
+      "voiceover": "<讲解这张截图的旁白>",
+      "annotations": [
+        {"type": "highlight-box", "x": 0.12, "y": 0.35, "w": 0.76, "h": 0.18, "text": "<高亮说明>"}
+      ],
+      "motion": "push-in"
+    },
+    {
+      "id": "s3",
+      "kind": "screenshot-explain",
+      "durationMs": 12000,
+      "asset": "assets/02.png",
+      "onScreenText": "<第二屏要点>",
+      "voiceover": "<第二屏旁白>",
+      "motion": "pan"
+    },
+    {
+      "id": "s4",
+      "kind": "summary-card",
+      "durationMs": 6000,
+      "onScreenText": "<3点总结>",
+      "subtitle": "<CTA：评论/私信/关注>",
+      "voiceover": "<收口旁白>"
+    }
+  ]
+}

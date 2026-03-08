@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "topic": "<一句话主题>",
+    "type": "opinion",
+    "durationSec": 60,
+    "ratio": "9:16",
+    "tone": "conflict",
+    "lang": "zh"
+  },
+  "scenes": [
+    {
+      "id": "s1",
+      "kind": "hook-card",
+      "durationMs": 3000,
+      "onScreenText": "<钩子句大字>",
+      "voiceover": "<钩子旁白>"
+    },
+    {
+      "id": "s2",
+      "kind": "point-card",
+      "durationMs": 14000,
+      "onScreenText": "<观点1一句话>\n<观点2一句话>",
+      "voiceover": "<展开解释旁白>",
+      "motion": "cut"
+    },
+    {
+      "id": "s3",
+      "kind": "point-card",
+      "durationMs": 14000,
+      "onScreenText": "<观点3一句话>\n<反直觉补充>",
+      "voiceover": "<继续解释旁白>",
+      "motion": "cut"
+    },
+    {
+      "id": "s4",
+      "kind": "outro-card",
+      "durationMs": 6000,
+      "onScreenText": "<总结一句话>",
+      "subtitle": "<CTA：评论关键词，我给模板>",
+      "voiceover": "<收口旁白>"
+    }
+  ]
+}
