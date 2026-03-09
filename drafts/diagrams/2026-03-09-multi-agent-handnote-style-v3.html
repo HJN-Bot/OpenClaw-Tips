@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>多 Agent 分Tag执行闭环 · V3</title>
+  <style>
+    :root{
+      --paper:#f2ede3;
+      --ink:#0f172a;
+      --muted:#9a3412;
+      --bar:#0b1028;
+      --line:#111827;
+      --card:#f8f4ea;
+      --stroke:#d8d1c4;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);font-family:"Inter","PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink)}
+    .sheet{width:1800px;margin:16px auto;padding:34px 40px;border:1px solid #d7cfbf;border-radius:10px;background:var(--paper)}
+    .kicker{font-size:12px;letter-spacing:.16em;color:#b45309;font-weight:800;text-transform:uppercase}
+    .title{font-size:82px;line-height:0.98;margin:10px 0 8px;font-weight:900;letter-spacing:-.02em}
+    .sub{font-size:36px;line-height:1.08;color:var(--muted);font-weight:800;margin:0 0 14px}
+    .topline{height:2px;background:var(--line);margin:10px 0 20px}
+
+    .section{margin:14px 0 20px}
+    .label{display:inline-block;background:var(--bar);color:#fff;padding:10px 18px;border-radius:9px;font-size:24px;font-weight:900;letter-spacing:.02em}
+    .block{margin-top:11px;background:var(--card);border:1.5px solid var(--stroke);border-radius:12px;padding:16px 20px}
+
+    .flow{font-size:32px;line-height:1.22;font-weight:800;letter-spacing:-.01em}
+
+    .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:11px}
+    .agent{background:var(--card);border:1.5px solid var(--stroke);border-radius:12px;overflow:hidden;min-height:278px}
+    .agent .head{background:var(--bar);color:#fff;padding:10px 12px;font-size:22px;font-weight:900;line-height:1.2}
+    .agent .body{padding:12px 12px 14px;font-size:20px;line-height:1.32}
+    .agent .body b{font-size:20px}
+
+    ul{margin:4px 0 0 22px;padding:0}
+    li{margin:5px 0;font-size:24px;line-height:1.28}
+
+    .quote{font-size:30px;font-weight:900;color:#9a3412;margin-top:12px;letter-spacing:-.01em}
+    .note{font-size:18px;color:#475569;margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="kicker">personal ai operating system</div>
+    <div class="title">多 Agent 分Tag执行闭环</div>
+    <div class="sub">Airtable真源 → Agent认领 → GitHub+Feishu产出 → 回写证据 → Dashboard追踪</div>
+    <div class="topline"></div>
+
+    <section class="section">
+      <span class="label">01 · 架构主线</span>
+      <div class="block flow">
+        Airtable（唯一真源） → Sam主脑按Tag派发 → Andrew/Rex/Lulu/Alex执行
+        → Feishu协作稿 + GitHub交付资产 → append-update回写Task Desc → Dashboard实时追踪
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="label">02 · Agent × Wiki × Output</span>
+      <div class="grid4">
+        <article class="agent">
+          <div class="head">Andrew｜Tag: AI学习</div>
+          <div class="body">
+            <b>Wiki</b>：AI Collection / AI Solid Knowledge<br><br>
+            <b>输出</b>：学习卡、观点总结、Paper解析、Prompt资产
+          </div>
+        </article>
+        <article class="agent">
+          <div class="head">Rex｜Tag: 工作 + CER</div>
+          <div class="body">
+            <b>Wiki</b>：R·Agent / 全栈开发 / RAify<br><br>
+            <b>输出</b>：代码方案、PPT结构、执行复盘、创业记录
+          </div>
+        </article>
+        <article class="agent">
+          <div class="head">Lulu｜Tag: 输出生产 + 兴趣</div>
+          <div class="body">
+            <b>Wiki</b>：She Codes Herself<br><br>
+            <b>输出</b>：小红书文案、视频脚本、图片素材说明、发布复盘
+          </div>
+        </article>
+        <article class="agent">
+          <div class="head">Alex｜Tag: 情感 + 健身</div>
+          <div class="body">
+            <b>Wiki</b>：思维宫殿<br><br>
+            <b>输出</b>：Daily/Weekly日志、行动卡、个人进度表
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="label">03 · 执行规则（统一）</span>
+      <div class="block">
+        <ul>
+          <li>Sam 是唯一主脑与最终裁决；子 Agent 负责提案、执行、协商与回写。</li>
+          <li>关键进展实时回写（不等 EOD）；卡住必须提问，不允许静默。</li>
+          <li>Feishu 放协作稿；GitHub 放代码/PPT/图片/可下载文件。</li>
+          <li>GitHub 链接写回同名 Wiki，Wiki/GitHub 证据再写回 Task Desc。</li>
+        </ul>
+        <div class="quote">“不是只聊流程，而是交付持续推进。”</div>
+      </div>
+      <div class="note">V3：加粗标题、放大层级对比、减少冗长段落、提升杂志感留白。</div>
+    </section>
+  </div>
+</body>
+</html>
