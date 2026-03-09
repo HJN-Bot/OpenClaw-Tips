@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>多 Agent 分Tag执行闭环</title>
+  <style>
+    :root{
+      --bg:#f6f2e9;
+      --ink:#111827;
+      --source-b:#5b6ca8; --source-bg:#f4f7ff;
+      --exec-b:#9b6ac8; --exec-bg:#faf5ff;
+      --out-b:#4c9b85; --out-bg:#f1fdf8;
+      --fb-b:#cc7a3a; --fb-bg:#fff7ef;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);font-family:Inter,"PingFang SC","Microsoft YaHei",sans-serif;color:var(--ink)}
+    .wrap{width:1800px;margin:24px auto;padding:24px 28px;border:1px solid #ddd6c9;border-radius:14px;background:var(--bg)}
+    .kicker{font-size:13px;color:#b45309;letter-spacing:.08em}
+    h1{margin:8px 0 10px;font-size:42px;line-height:1.15}
+    .sub{font-size:30px;color:#c2410c;margin-bottom:18px}
+    .line{height:2px;background:#0b1028;margin-bottom:18px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;grid-gap:22px}
+    .card{border:2px solid;border-radius:18px;padding:18px 20px 16px;min-height:440px}
+    .card h2{margin:0 0 10px;font-size:30px}
+    .card ul{margin:8px 0 0 18px;padding:0;font-size:24px;line-height:1.35}
+    .card li{margin:4px 0}
+    .key{margin-top:10px;font-size:22px;font-weight:600}
+    .source{border-color:var(--source-b);background:var(--source-bg)}
+    .exec{border-color:var(--exec-b);background:var(--exec-bg)}
+    .out{border-color:var(--out-b);background:var(--out-bg)}
+    .fb{border-color:var(--fb-b);background:var(--fb-bg)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="kicker">PERSONAL AI SYSTEM · MULTI-AGENT OPERATING NOTES</div>
+    <h1>多 Agent 分Tag执行闭环</h1>
+    <div class="sub">Airtable真源 → Agent认领 → GitHub+Feishu产出 → 回写证据 → Dashboard追踪</div>
+    <div class="line"></div>
+
+    <div class="grid">
+      <section class="card source">
+        <h2>① 真源层｜Airtable + Dashboard</h2>
+        <ul>
+          <li>Airtable Tasks 是唯一真源</li>
+          <li>字段：title / desc / state / tag / owner / update_at</li>
+          <li>Dashboard：任务可视化、按tag检索、进度追踪与验收</li>
+          <li>规则：关键进展必须回写，避免信息分叉</li>
+        </ul>
+      </section>
+
+      <section class="card exec">
+        <h2>② 执行层｜Sam主脑 + 4个Agent</h2>
+        <ul>
+          <li>Sam：最终判断与仲裁，统一优先级和质量标准</li>
+          <li>Andrew：AI Collection + AI Solid Knowledge（学习卡/观点/论文）</li>
+          <li>Rex：R·Agent + 全栈开发 + RAify（代码/PPT结构/执行复盘）</li>
+          <li>Lulu：She Codes Herself（文案/视频脚本/发布复盘）</li>
+          <li>Alex：思维宫殿（Daily/Weekly/行动卡）</li>
+        </ul>
+      </section>
+
+      <section class="card fb">
+        <h2>④ 反馈层｜回写 + 验收</h2>
+        <ul>
+          <li>统一回写：Deliverable / Feishu Link / GitHub Link / Owner / Status / Next</li>
+          <li>节奏：实时进展即回写，EOD只做汇总</li>
+          <li>收益：看板可诊断、交付可追溯、复盘可复用</li>
+        </ul>
+        <div class="key">“不是只聊流程，而是交付持续推进。”</div>
+      </section>
+
+      <section class="card out">
+        <h2>③ 产出层｜Feishu Wiki + GitHub</h2>
+        <ul>
+          <li>Feishu Wiki：协作稿、草稿页（...-Sam）、复盘模板</li>
+          <li>GitHub：代码 / PPT / 图片 / 文字 / 表格文件</li>
+          <li>双向留链：GitHub链接写回同名Wiki，证据回写Task Desc</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
