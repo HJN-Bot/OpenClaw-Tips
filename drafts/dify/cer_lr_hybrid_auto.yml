@@ -1,0 +1,204 @@
+app:
+  description: CER LR Hybrid (No-RAG default + RAG uncertain) with review gate and auto webhook export
+  icon: "🤖"
+  icon_background: "#FFEAD5"
+  mode: workflow
+  name: CER LR Hybrid Auto
+  use_icon_as_answer_icon: false
+
+kind: app
+version: 0.5.0
+
+dependencies:
+  - type: marketplace
+    value:
+      marketplace_plugin_unique_identifier: "langgenius/azure_openai:0.0.37@a035c99b7015994850402564ad9da3ac499b4c02f741f46b2f5db8b5763ab03c"
+
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  rag_pipeline_variables: []
+
+  features:
+    opening_statement: ""
+    suggested_questions: []
+    suggested_questions_after_answer: { enabled: false }
+    sensitive_word_avoidance: { enabled: false }
+    speech_to_text: { enabled: false }
+    text_to_speech: { enabled: false, language: "", voice: "" }
+    retriever_resource: { enabled: true }
+    image: { enabled: false, number_limits: 3, transfer_methods: [local_file, remote_url] }
+    file_upload:
+      enabled: false
+      allowed_file_types: [document]
+      allowed_file_extensions: [.PDF, .DOCX, .TXT, .MD]
+      allowed_file_upload_methods: [local_file, remote_url]
+      fileUploadConfig:
+        file_size_limit: 30
+        file_upload_limit: 10
+        workflow_file_upload_limit: 10
+        batch_count_limit: 5
+        single_chunk_attachment_limit: 10
+        image_file_size_limit: 10
+        image_file_batch_limit: 10
+        attachment_image_file_size_limit: 2
+        audio_file_size_limit: 50
+        video_file_size_limit: 100
+
+  graph:
+    viewport: { x: 0, y: 0, zoom: 0.72 }
+    nodes:
+      - id: "start_1"
+        type: custom
+        position: { x: 80, y: 220 }
+        positionAbsolute: { x: 80, y: 220 }
+        width: 300
+        height: 250
+        sourcePosition: right
+        targetPosition: left
+        data:
+          title: User Input
+          type: start
+          variables:
+            - { variable: user_question, label: Question, type: paragraph, required: true, default: "按2.2.1/2.2.2/2.2.4输出CER Literature Review结果", allowed_file_types: [document], allowed_file_extensions: [], allowed_file_upload_methods: [local_file, remote_url] }
+            - { variable: input_pdf, label: PDF, type: file, required: true, allowed_file_types: [document], allowed_file_extensions: [.PDF], allowed_file_upload_methods: [local_file, remote_url] }
+            - { variable: use_rag_for_uncertain, label: Use RAG for uncertain only, type: select, required: true, default: "yes", options: ["yes", "no"] }
+            - { variable: review_gate_confirmed, label: Human Review Confirmed, type: select, required: true, default: "no", options: ["yes", "no"] }
+            - { variable: webhook_url, label: Webhook URL, type: text-input, required: true, default: "http://127.0.0.1:8099/dify/lr-output" }
+
+      - id: "doc_extract_1"
+        type: custom
+        position: { x: 420, y: 220 }
+        positionAbsolute: { x: 420, y: 220 }
+        width: 260
+        height: 110
+        sourcePosition: right
+        targetPosition: left
+        data:
+          title: Doc Extractor
+          type: document-extractor
+          is_array_file: false
+          variable_selector: ["start_1", "input_pdf"]
+
+      - id: "llm_prescreen_1"
+        type: custom
+        position: { x: 730, y: 110 }
+        positionAbsolute: { x: 730, y: 110 }
+        width: 320
+        height: 110
+        sourcePosition: right
+        targetPosition: left
+        data:
+          title: LLM - NoRAG Prescreen
+          type: llm
+          structured_output_enabled: false
+          context: { enabled: false, variable_selector: [] }
+          vision: { enabled: false }
+          model: { provider: langgenius/azure_openai/azure_openai, name: gpt-4o, mode: chat, completion_params: { temperature: 0.2 } }
+          prompt_template:
+            - role: system
+              text: "You are a strict CER screening assistant."
+            - role: user
+              text: |
+                Extracted text:
+                {{#doc_extract_1.text#}}
+                Build screening fields: product_match/comparator_match/human_data/include_pre_decision/reason.
+
+      - id: "llm_rag_2"
+        type: custom
+        position: { x: 730, y: 310 }
+        positionAbsolute: { x: 730, y: 310 }
+        width: 320
+        height: 110
+        sourcePosition: right
+        targetPosition: left
+        data:
+          title: LLM - RAG Clarifier
+          type: llm
+          structured_output_enabled: false
+          context: { enabled: false, variable_selector: [] }
+          vision: { enabled: false }
+          model: { provider: langgenius/azure_openai/azure_openai, name: gpt-4o, mode: chat, completion_params: { temperature: 0.2 } }
+          prompt_template:
+            - role: system
+              text: "Clarify uncertain cases only when use_rag_for_uncertain=yes."
+            - role: user
+              text: |
+                use_rag_for_uncertain={{#start_1.use_rag_for_uncertain#}}
+                prescreen:
+                {{#llm_prescreen_1.text#}}
+                text:
+                {{#doc_extract_1.text#}}
+                Return final include/exclude and reasons.
+
+      - id: "llm_export_payload_3"
+        type: custom
+        position: { x: 1090, y: 210 }
+        positionAbsolute: { x: 1090, y: 210 }
+        width: 340
+        height: 120
+        sourcePosition: right
+        targetPosition: left
+        data:
+          title: LLM - Build JSON payload
+          type: llm
+          structured_output_enabled: false
+          context: { enabled: false, variable_selector: [] }
+          vision: { enabled: false }
+          model: { provider: langgenius/azure_openai/azure_openai, name: gpt-4o, mode: chat, completion_params: { temperature: 0.2 } }
+          prompt_template:
+            - role: system
+              text: "Output valid JSON payload for webhook with keys: included, excluded, review"
+            - role: user
+              text: |
+                review_gate_confirmed={{#start_1.review_gate_confirmed#}}
+                prescreen={{#llm_prescreen_1.text#}}
+                rag={{#llm_rag_2.text#}}
+
+                Build strict JSON:
+                {
+                  "included": [...],
+                  "excluded": [...],
+                  "review": {"papers": [...]}
+                }
+
+      - id: "http_4"
+        type: custom
+        position: { x: 1460, y: 210 }
+        positionAbsolute: { x: 1460, y: 210 }
+        width: 300
+        height: 120
+        sourcePosition: right
+        targetPosition: left
+        data:
+          title: HTTP Request - Webhook
+          type: http-request
+          method: POST
+          url: "{{#start_1.webhook_url#}}"
+          headers:
+            - key: "Content-Type"
+              value: "application/json"
+          body: "{{#llm_export_payload_3.text#}}"
+
+      - id: "end_1"
+        type: custom
+        position: { x: 1790, y: 210 }
+        positionAbsolute: { x: 1790, y: 210 }
+        width: 260
+        height: 130
+        sourcePosition: right
+        targetPosition: left
+        data:
+          title: Output
+          type: end
+          outputs:
+            - { variable: webhook_payload, value_type: string, value_selector: ["llm_export_payload_3", "text"] }
+
+    edges:
+      - { id: e1, type: custom, source: "start_1", sourceHandle: source, target: "doc_extract_1", targetHandle: target, data: { sourceType: start, targetType: document-extractor, isInLoop: false, isInIteration: false }, zIndex: 0 }
+      - { id: e2, type: custom, source: "doc_extract_1", sourceHandle: source, target: "llm_prescreen_1", targetHandle: target, data: { sourceType: document-extractor, targetType: llm, isInLoop: false }, zIndex: 0 }
+      - { id: e3, type: custom, source: "llm_prescreen_1", sourceHandle: source, target: "llm_rag_2", targetHandle: target, data: { sourceType: llm, targetType: llm, isInLoop: false }, zIndex: 0 }
+      - { id: e4, type: custom, source: "llm_prescreen_1", sourceHandle: source, target: "llm_export_payload_3", targetHandle: target, data: { sourceType: llm, targetType: llm, isInLoop: false }, zIndex: 0 }
+      - { id: e5, type: custom, source: "llm_rag_2", sourceHandle: source, target: "llm_export_payload_3", targetHandle: target, data: { sourceType: llm, targetType: llm, isInLoop: false }, zIndex: 0 }
+      - { id: e6, type: custom, source: "llm_export_payload_3", sourceHandle: source, target: "http_4", targetHandle: target, data: { sourceType: llm, targetType: http-request, isInLoop: false }, zIndex: 0 }
+      - { id: e7, type: custom, source: "http_4", sourceHandle: source, target: "end_1", targetHandle: target, data: { sourceType: http-request, targetType: end, isInLoop: false }, zIndex: 0 }
